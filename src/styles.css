@@ -1,5 +1,3 @@
-@import "tailwindcss";
-@import "tw-animate-css";
 
 :root{--navy:#182241;--navy-deep:#0f1830;--gold:#d8b64c;--gold-light:#f1d778;--cream:#f8f6ef;--paper:#fffefa;--ink:#17203a;--muted:#66718a;--line:rgba(23,32,58,.12)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{text-decoration:none;color:inherit}.site-shell{overflow:clip}
