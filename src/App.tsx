@@ -137,7 +137,7 @@ export default function App() {
 
       <section id="mundo" className="world section-pad">
         <div className="world-map-watermark" aria-hidden="true">
-          <Globe2 size={420} strokeWidth={0.7} />
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/World_map.svg" alt="" />
         </div>
 
         <div className="section-index">03</div>
