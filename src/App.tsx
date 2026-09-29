@@ -53,7 +53,7 @@ export default function App() {
     <main className="site-shell">
       <header className="topbar">
         <a className="brand" href="#inicio" onClick={() => setMenuOpen(false)}>
-          <span className="brand-mark">JA</span>
+          <img className="brand-mark" src="/argentina-flag.svg" alt="Argentina" />
           <span className="brand-copy"><strong>JUHAL ACADEMY</strong><span>INGLÊS • ESPANHOL</span></span>
         </a>
 
@@ -177,7 +177,7 @@ export default function App() {
       </section>
 
       <footer className="footer">
-        <div className="footer-brand"><span className="brand-mark small">JA</span><div><strong>JUHAL ACADEMY</strong><span>INGLÊS • ESPANHOL</span></div></div>
+        <div className="footer-brand"><img className="brand-mark small" src="/argentina-flag.svg" alt="Argentina" /><div><strong>JUHAL ACADEMY</strong><span>INGLÊS • ESPANHOL</span></div></div>
         <div className="footer-links"><a href={instagramAcademy} target="_blank" rel="noreferrer"><Instagram size={18}/></a><a href={instagramTeacher} target="_blank" rel="noreferrer"><MessageCircle size={18}/></a><a href={whatsappUrl} target="_blank" rel="noreferrer"><Send size={17}/></a></div>
         <p>© {new Date().getFullYear()} Juhal Academy</p>
       </footer>
