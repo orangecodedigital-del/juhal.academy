@@ -9,11 +9,14 @@ const instagramTeacher = "https://www.instagram.com/espanhol.argentina/";
 const whatsappUrl = "https://wa.me/message/PEOPTGUMLEV3N1";
 
 const spanishWorld = [
-  ["🇦🇷","Argentina"],["🇧🇴","Bolívia"],["🇨🇱","Chile"],["🇨🇴","Colômbia"],
-  ["🇨🇷","Costa Rica"],["🇨🇺","Cuba"],["🇪🇨","Equador"],["🇪🇸","Espanha"],
-  ["🇬🇹","Guatemala"],["🇲🇽","México"],["🇵🇦","Panamá"],["🇵🇾","Paraguai"],
-  ["🇵🇪","Peru"],["🇺🇾","Uruguai"],["🇻🇪","Venezuela"],
+  ["ar","Argentina"],["bo","Bolívia"],["cl","Chile"],["co","Colômbia"],
+  ["cr","Costa Rica"],["cu","Cuba"],["ec","Equador"],["es","Espanha"],
+  ["gt","Guatemala"],["mx","México"],["pa","Panamá"],["py","Paraguai"],
+  ["pe","Peru"],["uy","Uruguai"],["ve","Venezuela"],
 ] as const;
+
+const argentinaHeroImage =
+  "https://upload.wikimedia.org/wikipedia/commons/b/b7/Argentinian_Flag%2C_Casa_Rosada%2C_Buenos_Aires.jpg";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -84,17 +87,21 @@ export default function App() {
               <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Quero aprender espanhol <MessageCircle size={18}/></a>
               <button className="button button-ghost" type="button" onClick={() => scrollTo("aulas")}>Conhecer as aulas <ArrowDown size={18}/></button>
             </div>
-            <div className="hero-note"><span className="argentina-chip">🇦🇷</span><span>+1.800 alunos já aprenderam com a Juhal.</span></div>
+            <div className="hero-note"><span className="argentina-chip"><img src="/argentina-flag.svg" alt="" /></span><span>+1.800 alunos já aprenderam com a Juhal.</span></div>
           </div>
 
-          <div className="hero-art" aria-hidden="true">
-            <div className="art-sky"/>
-            <div className="art-sun">☼</div>
-            <div className="art-flag"><span className="art-sun-small">☼</span></div>
-            <div className="art-card">
-              <div className="art-card-top"><span>ESPAÑOL</span><span>ARGENTINA</span></div>
-              <Languages size={38} strokeWidth={1.5}/>
-              <strong>HABLAR</strong><small>¿Cómo estás?</small><small>¿Vamos?</small>
+          <div className="hero-art">
+            <img
+              className="hero-photo"
+              src={argentinaHeroImage}
+              alt="Bandeira da Argentina hasteada em Buenos Aires"
+              loading="eager"
+            />
+            <div className="hero-photo-overlay" />
+            <div className="hero-photo-caption">
+              <span>ARGENTINA</span>
+              <strong>El español que conecta.</strong>
+              <small>Foto: CivArmy / Wikimedia Commons · CC BY-SA 4.0</small>
             </div>
           </div>
         </div>
@@ -145,7 +152,20 @@ export default function App() {
             <div><h2>Uma língua, <span>muitos lugares.</span></h2><p>Conheça um pouco do mundo hispânico e das diferentes culturas conectadas pelo espanhol.</p></div>
             <div className="world-counter"><strong>🇦🇷</strong><span>Argentina como ponto de partida</span></div>
           </div>
-          <div className="country-grid">{spanishWorld.map(([flag,country]) => <div className="country-pill" key={country}><span>{flag}</span><strong>{country}</strong></div>)}</div>
+          <div className="country-grid">
+            {spanishWorld.map(([code,country]) => (
+              <div className="country-pill" key={country}>
+                <span className="country-flag">
+                  <img
+                    src={`https://flagcdn.com/w80/${code}.png`}
+                    alt={`Bandeira da ${country}`}
+                    loading="lazy"
+                  />
+                </span>
+                <strong>{country}</strong>
+              </div>
+            ))}
+          </div>
           <div className="argentina-feature"><div className="argentina-sun">☼</div><div><span>EL ESPAÑOL DE ARGENTINA</span><strong>Vos, che, dale.</strong><p>Aprenda também o ritmo, as expressões e as particularidades do espanhol argentino.</p></div></div>
         </div>
       </section>
