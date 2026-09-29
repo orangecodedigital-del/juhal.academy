@@ -1,11 +1,9 @@
-import netlify from "@netlify/vite-plugin-tanstack-start";
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  vite: {
-    plugins: [netlify()],
-  },
-  tanstackStart: {
-    server: { entry: "server" },
+  plugins: [react()],
+  resolve: {
+    tsconfigPaths: true,
   },
 });
