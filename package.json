@@ -1,30 +1,17 @@
 {
   "name": "juhal-academy",
   "private": true,
-  "sideEffects": false,
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite",
     "build": "vite build",
-    "build:dev": "vite build --mode development",
     "preview": "vite preview"
   },
-  "overrides": {
-    "rolldown": "1.2.1"
-  },
   "dependencies": {
-    "@lovable.dev/vite-tanstack-config": "^2.24.0",
-    "@netlify/vite-plugin-tanstack-start": "^1.3.19",
-    "@tailwindcss/vite": "^4.2.1",
-    "@tanstack/react-query": "^5.101.1",
-    "@tanstack/react-router": "1.170.18",
-    "@tanstack/react-start": "1.168.32",
-    "@tanstack/router-plugin": "1.168.23",
     "lucide-react": "^0.575.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "tailwindcss": "^4.2.1",
-    "tw-animate-css": "^1.3.4"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.16.5",
@@ -32,7 +19,6 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.2.0",
     "typescript": "^5.8.3",
-    "vite": "8.1.5",
-    "vite-tsconfig-paths": "^6.0.2"
+    "vite": "8.1.5"
   }
 }
