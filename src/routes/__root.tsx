@@ -69,6 +69,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
     ],
+    links: [{ rel: "stylesheet", href: "/styles.css?v=20260929" }],
   }),
   shellComponent: ({ children }: { children: ReactNode }) => (
     <html lang="pt-BR">
