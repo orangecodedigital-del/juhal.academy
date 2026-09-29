@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17213f">
+  <meta name="description" content="Juhal Academy — Aprenda espanhol com uma professora nativa argentina. Aulas para crianças, adolescentes e adultos, além de preparação para SIELE e CELU.">
+  <meta property="og:title" content="Juhal Academy | Espanhol com professora nativa argentina">
+  <meta property="og:description" content="Aprenda espanhol com uma professora nativa argentina. Fale espanhol com naturalidade e prepare-se para SIELE e CELU.">
+  <title>Juhal Academy | Espanhol • Professora Nativa Argentina 🇦🇷</title>
+  <style>
+    :root {
+      --navy:#17213f;
+      --navy-deep:#0e1630;
+      --navy-soft:#243154;
+      --gold:#d8b64c;
+      --gold-light:#f1d778;
+      --cream:#f8f6ef;
+      --paper:#fffefa;
+      --ink:#162039;
+      --muted:#657089;
+      --line:rgba(23,33,63,.12);
+      --shadow:0 22px 70px rgba(11,22,48,.14);
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);background:var(--cream);line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    .serif{font-family:Georgia,"Times New Roman",serif}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;color:var(--gold);
+      font-size:11px;font-weight:850;letter-spacing:.2em;text-transform:uppercase
+    }
+    .eyebrow:before{content:"";width:32px;height:1px;background:currentColor}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.08}
+    .section{padding:105px 0}
+    .section-head{max-width:720px;margin-bottom:55px}
+    .section-head h2{font-size:clamp(36px,5vw,56px);margin-top:17px}
+    .section-head p{margin-top:18px;color:var(--muted);font-size:16px;max-width:640px}
+
+    /* NAV */
+    .nav{
+      position:fixed;inset:0 0 auto;z-index:20;transition:.3s
+    }
+    .nav.scrolled{
+      background:rgba(23,33,63,.94);
+      backdrop-filter:blur(18px);
+      box-shadow:0 8px 30px rgba(0,0,0,.13)
+    }
+    .nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .brand{color:#fff;display:flex;align-items:center;gap:12px}
+    .brand-mark{
+      width:42px;height:42px;border:1px solid rgba(216,182,76,.72);
+      border-radius:12px;display:grid;place-items:center;
+      color:var(--gold-light);font:700 17px Georgia,serif
+    }
+    .brand strong{display:block;font:700 16px Georgia,serif;letter-spacing:.12em}
+    .brand small{display:block;color:rgba(255,255,255,.62);font-size:9px;letter-spacing:.27em;text-transform:uppercase;margin-top:1px}
+    .nav-links{display:flex;gap:28px;color:rgba(255,255,255,.82);font-size:13px}
+    .nav-links a:hover{color:#fff}
+    .nav-cta,.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:0;border-radius:999px;padding:13px 20px;font-weight:850;
+      cursor:pointer;transition:.25s
+    }
+    .nav-cta{background:#fff;color:var(--navy);font-size:13px}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px)}
+    .mobile-toggle{display:none;border:0;background:transparent;color:#fff;font-size:26px}
+
+    /* HERO */
+    .hero{
+      min-height:790px;display:flex;align-items:center;color:#fff;position:relative;isolation:isolate;overflow:hidden;
+      background:
+        radial-gradient(circle at 73% 28%,rgba(216,182,76,.2),transparent 27%),
+        radial-gradient(circle at 12% 76%,rgba(255,255,255,.06),transparent 23%),
+        linear-gradient(135deg,var(--navy-deep),var(--navy))
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;opacity:.11;pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.22) 1px,transparent 1px);
+      background-size:72px 72px;
+      mask-image:linear-gradient(to right,black,transparent 82%)
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:68px;align-items:center;position:relative;z-index:1}
+    .hero h1{font-size:clamp(48px,6vw,78px);margin:20px 0 22px;max-width:760px}
+    .hero h1 em{font-style:normal;color:var(--gold-light)}
+    .hero-copy{max-width:660px;font-size:18px;color:rgba(255,255,255,.76);line-height:1.78}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:31px}
+    .btn-gold{background:var(--gold);color:#141c31;padding:16px 24px}
+    .btn-gold:hover{box-shadow:0 17px 38px rgba(216,182,76,.24)}
+    .btn-outline{color:#fff;border:1px solid rgba(255,255,255,.23);padding:15px 22px}
+    .btn-outline:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.46)}
+    .proofs{display:flex;gap:30px;flex-wrap:wrap;margin-top:39px;padding-top:27px;border-top:1px solid rgba(255,255,255,.12)}
+    .proof strong{display:block;font:700 26px Georgia,serif}
+    .proof span{display:block;margin-top:3px;text-transform:uppercase;letter-spacing:.13em;font-size:10px;color:rgba(255,255,255,.55)}
+    .hero-visual{
+      min-height:560px;border-radius:34px;overflow:hidden;position:relative;
+      background:linear-gradient(155deg,#cdd2d4,#f1f0e9 51%,#aab3bc);
+      box-shadow:0 25px 80px rgba(0,0,0,.23);border:1px solid rgba(255,255,255,.13)
+    }
+    .sky-glow{
+      position:absolute;width:180px;height:180px;border-radius:50%;right:19%;top:47%;
+      background:radial-gradient(circle,rgba(255,249,211,.92) 0 11%,rgba(255,246,202,.36) 31%,transparent 65%);
+      filter:blur(1px)
+    }
+    .flag{
+      position:absolute;left:-13%;right:-11%;top:33%;height:230px;transform:rotate(-7deg);
+      background:linear-gradient(#fff 0 34%,#79aadd 34% 66%,#fff 66% 100%);
+      box-shadow:0 33px 33px rgba(16,31,55,.16);opacity:.95
+    }
+    .flag:after{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(166deg,transparent 0 30%,rgba(43,67,102,.17) 30% 35%,transparent 35% 52%,rgba(43,67,102,.16) 52% 59%,transparent 59% 100%);
+      mix-blend-mode:multiply
+    }
+    .sun{
+      position:absolute;left:41%;top:50%;transform:translate(-50%,-50%);
+      width:64px;height:64px;border-radius:50%;
+      background:radial-gradient(circle,#e0b84a 0 29%,transparent 31%),repeating-conic-gradient(#e0b84a 0 6deg,transparent 6deg 15deg)
+    }
+    .hero-tag{
+      position:absolute;top:24px;left:24px;padding:10px 13px;border-radius:999px;
+      background:rgba(23,33,63,.9);color:#fff;font-size:11px;font-weight:800;letter-spacing:.07em
+    }
+    .hero-bottom{
+      position:absolute;left:24px;right:24px;bottom:24px;padding:21px;border-radius:20px;
+      background:rgba(16,25,49,.86);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.13)
+    }
+    .hero-bottom small{display:block;color:var(--gold-light);text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:850}
+    .hero-bottom strong{display:block;font:700 25px Georgia,serif;color:#fff;margin-top:4px}
+
+    /* TRUST */
+    .trust{background:#fff}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .trust-card{padding:28px;border:1px solid var(--line);background:var(--paper);border-radius:20px}
+    .trust-card .icon{width:36px;height:36px;border-radius:50%;background:#eff5ed;color:#25794b;display:grid;place-items:center;font-weight:900}
+    .trust-card strong{display:block;margin-top:17px;font:700 18px Georgia,serif}
+    .trust-card p{margin-top:8px;color:var(--muted);font-size:13px}
+
+    /* EXPERIENCE */
+    .experience{background:var(--cream)}
+    .experience-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+    .experience h2{font-size:clamp(37px,4.4vw,52px)}
+    .experience-intro{margin-top:18px;color:var(--muted);max-width:500px}
+    .feature-list{display:grid;gap:13px}
+    .feature{
+      display:grid;grid-template-columns:58px 1fr;gap:18px;align-items:start;
+      padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.64)
+    }
+    .feature-number{
+      width:48px;height:48px;border-radius:14px;background:var(--navy);color:var(--gold-light);
+      display:grid;place-items:center;font:700 18px Georgia,serif
+    }
+    .feature h3{font-size:21px}
+    .feature p{margin-top:6px;color:var(--muted);font-size:14px}
+
+    /* PROGRAMS */
+    .programs{background:#fff}
+    .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .program{
+      padding:30px;border-radius:24px;background:var(--cream);border:1px solid var(--line);
+      min-height:255px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s
+    }
+    .program:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .program-label{color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+    .program h3{font-size:26px;margin-top:13px}
+    .program p{color:var(--muted);font-size:14px;margin-top:10px}
+    .program-link{margin-top:21px;font-size:13px;font-weight:850;color:var(--navy)}
+
+    /* CERT */
+    .cert{
+      background:var(--navy);color:#fff
+    }
+    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .cert h2{font-size:clamp(38px,4.6vw,56px);margin-top:16px}
+    .cert p{color:rgba(255,255,255,.7);margin-top:18px;max-width:610px}
+    .cert-panel{
+      padding:32px;border:1px solid rgba(255,255,255,.13);border-radius:26px;background:rgba(255,255,255,.045)
+    }
+    .cert-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.11)}
+    .cert-item:last-child{border-bottom:0}
+    .check{width:28px;height:28px;border-radius:50%;background:var(--gold);color:#111a2f;display:grid;place-items:center;font-size:13px;font-weight:900;flex:0 0 auto}
+    .cert-item strong{display:block;font:700 20px Georgia,serif}
+    .cert-item span{display:block;color:rgba(255,255,255,.56);font-size:13px;margin-top:2px}
+
+    /* SOCIAL */
+    .social{background:#fff}
+    .social-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .social-card{
+      border:1px solid var(--line);border-radius:25px;padding:31px;background:var(--paper);
+      min-height:280px;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .social-card.dark{background:var(--navy);color:#fff;border-color:transparent}
+    .social-card h3{font-size:29px;margin-top:13px}
+    .social-card p{color:var(--muted);font-size:14px;margin-top:10px}
+    .social-card.dark p{color:rgba(255,255,255,.65)}
+    .social-card .handle{font-weight:900;font-size:14px;margin-top:20px}
+    .social-card .btn{align-self:flex-start;margin-top:24px}
+    .social-card .btn-dark{background:var(--navy);color:#fff}
+    .social-card .btn-light{background:#fff;color:var(--navy)}
+
+    /* CONTACT */
+    .contact{background:var(--cream)}
+    .contact-wrap{
+      background:linear-gradient(135deg,#fdfcf7,#f1eee4);border:1px solid var(--line);
+      border-radius:32px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:55px;box-shadow:var(--shadow)
+    }
+    .contact h2{font-size:clamp(37px,4.7vw,57px);margin-top:16px}
+    .contact p{color:var(--muted);margin-top:16px;max-width:500px}
+    .contact-list{display:grid;gap:10px;margin-top:25px}
+    .contact-link{
+      display:flex;align-items:center;gap:13px;padding:15px 16px;border:1px solid var(--line);
+      border-radius:15px;background:rgba(255,255,255,.72);font-size:14px;font-weight:800
+    }
+    .contact-link span{width:31px;height:31px;border-radius:9px;background:var(--navy);color:var(--gold-light);display:grid;place-items:center;font-size:13px}
+    .lead-form{background:#fff;border-radius:23px;padding:26px;border:1px solid var(--line)}
+    .lead-form h3{font-size:27px}
+    .field{margin-top:16px}
+    .field label{display:block;font-size:12px;font-weight:800;color:var(--ink);margin-bottom:6px}
+    .field input,.field select{
+      width:100%;padding:13px 14px;border-radius:13px;border:1px solid var(--line);
+      outline:none;background:#fff;color:var(--ink)
+    }
+    .field input:focus,.field select:focus{border-color:var(--gold)}
+    .lead-form .btn{width:100%;margin-top:19px;background:var(--gold);color:#151d32;padding:15px 20px}
+    .form-note{font-size:11px!important;margin-top:9px!important;color:#8990a1!important}
+
+    /* FOOTER */
+    footer{background:var(--navy-deep);color:#fff;padding:42px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-note{color:rgba(255,255,255,.48);font-size:11px}
+    .footer-links{display:flex;gap:19px;color:rgba(255,255,255,.68);font-size:12px}
+    .footer-links a:hover{color:#fff}
+
+    @media(max-width:950px){
+      .nav-links{display:none}
+      .mobile-toggle{display:block}
+      .nav-cta{display:none}
+      .hero{min-height:auto;padding:145px 0 90px}
+      .hero-grid,.experience-grid,.cert-grid,.contact-wrap{grid-template-columns:1fr}
+      .hero-visual{min-height:470px}
+      .trust-grid{grid-template-columns:repeat(2,1fr)}
+      .program-grid{grid-template-columns:1fr}
+      .social-grid{grid-template-columns:1fr}
+      .contact-wrap{padding:35px}
+    }
+    @media(max-width:600px){
+      .container{width:min(100% - 28px,1160px)}
+      .section{padding:78px 0}
+      .hero h1{font-size:47px}
+      .hero-copy{font-size:16px}
+      .hero-actions{flex-direction:column;align-items:stretch}
+      .btn-gold,.btn-outline{width:100%}
+      .proofs{gap:20px}
+      .hero-visual{min-height:390px}
+      .trust-grid{grid-template-columns:1fr}
+      .feature{grid-template-columns:48px 1fr;padding:19px}
+      .feature-number{width:42px;height:42px}
+      .contact-wrap{padding:24px;border-radius:24px;gap:30px}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+      .footer-links{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio" aria-label="Juhal Academy">
+        <span class="brand-mark">JA</span>
+        <span>
+          <strong>JUHAL ACADEMY</strong>
+          <small>INGLÊS • ESPANHOL</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre">A experiência</a>
+        <a href="#aulas">Aulas</a>
+        <a href="#certificacoes">SIELE & CELU</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/message/PEOPTGUMLEV3N1" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <button class="mobile-toggle" aria-label="Abrir menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Aprender espanhol</span>
+          <h1>Espanhol com <em>uma professora nativa argentina.</em></h1>
+          <p class="hero-copy">
+            Aprenda a falar espanhol com naturalidade, desenvolva confiança para se comunicar
+            e conte com preparação direcionada para SIELE e CELU.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="https://wa.me/message/PEOPTGUMLEV3N1" target="_blank" rel="noopener">Quero aprender espanhol →</a>
+            <a class="btn btn-outline" href="#aulas">Conhecer as aulas</a>
+          </div>
+          <div class="proofs">
+            <div class="proof"><strong>+1.800</strong><span>alunos já aprenderam</span></div>
+            <div class="proof"><strong>🇦🇷</strong><span>professora nativa</span></div>
+            <div class="proof"><strong>SIELE • CELU</strong><span>preparação</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Referência visual inspirada na Argentina">
+          <div class="hero-tag">PROFESSORA NATIVA ARGENTINA 🇦🇷</div>
+          <div class="sky-glow"></div>
+          <div class="flag"><div class="sun"></div></div>
+          <div class="hero-bottom">
+            <small>Juhal Academy</small>
+            <strong>Aprenda espanhol. Fale com confiança.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust">
+      <div class="container trust-grid">
+        <article class="trust-card">
+          <div class="icon">✓</div>
+          <strong>Professora nativa</strong>
+          <p>Contato direto com o espanhol argentino e suas nuances de pronúncia e expressão.</p>
+        </article>
+        <article class="trust-card">
+          <div class="icon">✓</div>
+          <strong>Para diferentes idades</strong>
+          <p>Aulas pensadas para crianças, adolescentes e adultos.</p>
+        </article>
+        <article class="trust-card">
+          <div class="icon">✓</div>
+          <strong>Fala de verdade</strong>
+          <p>Aprendizado direcionado à comunicação, compreensão e segurança para conversar.</p>
+        </article>
+        <article class="trust-card">
+          <div class="icon">✓</div>
+          <strong>Certificações</strong>
+          <p>Preparação para exames de proficiência SIELE e CELU.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section experience" id="sobre">
+      <div class="container experience-grid">
+        <div>
+          <span class="eyebrow">A experiência Juhal</span>
+          <h2>Mais que estudar espanhol. É começar a viver o idioma.</h2>
+          <p class="experience-intro">
+            A proposta é aproximar o espanhol da sua rotina, com orientação de uma professora
+            nativa argentina e um caminho de aprendizagem adaptado ao seu objetivo.
+          </p>
+          <a class="btn btn-gold" style="margin-top:26px" href="https://wa.me/message/PEOPTGUMLEV3N1" target="_blank" rel="noopener">Conversar sobre as aulas</a>
+        </div>
+
+        <div class="feature-list">
+          <article class="feature">
+            <div class="feature-number">01</div>
+            <div><h3>Conversação e segurança</h3><p>Pratique estruturas e situações reais para sair do “eu entendo, mas não consigo falar”.</p></div>
+          </article>
+          <article class="feature">
+            <div class="feature-number">02</div>
+            <div><h3>Pronúncia e compreensão</h3><p>Aprenda com exposição ao idioma falado por uma nativa e refine sua escuta.</p></div>
+          </article>
+          <article class="feature">
+            <div class="feature-number">03</div>
+            <div><h3>Aulas para o seu momento</h3><p>Conteúdo que acompanha idade, nível e objetivo de quem está aprendendo.</p></div>
+          </article>
+          <article class="feature">
+            <div class="feature-number">04</div>
+            <div><h3>Preparação para SIELE e CELU</h3><p>Organize seus estudos com foco nas competências exigidas nas certificações.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section programs" id="aulas">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Aulas</span>
+          <h2>Um caminho de aprendizagem para diferentes objetivos.</h2>
+          <p>Escolha o objetivo que mais se aproxima do que você procura e fale diretamente com a professora.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program">
+            <div>
+              <span class="program-label">01 • Idioma</span>
+              <h3>Espanhol do zero</h3>
+              <p>Comece com uma base sólida e avance com tranquilidade, mesmo sem conhecimento prévio.</p>
+            </div>
+            <a class="program-link" href="https://wa.me/message/PEOPTGUMLEV3N1?text=Olá!%20Quero%20aprender%20espanhol%20do%20zero." target="_blank" rel="noopener">Tenho esse objetivo →</a>
+          </article>
+          <article class="program">
+            <div>
+              <span class="program-label">02 • Fluência</span>
+              <h3>Conversação</h3>
+              <p>Para quem já estuda espanhol e quer desenvolver mais naturalidade e confiança ao falar.</p>
+            </div>
+            <a class="program-link" href="https://wa.me/message/PEOPTGUMLEV3N1?text=Olá!%20Tenho%20interesse%20em%20aulas%20de%20conversação." target="_blank" rel="noopener">Quero conversar →</a>
+          </article>
+          <article class="program">
+            <div>
+              <span class="program-label">03 • Certificação</span>
+              <h3>SIELE & CELU</h3>
+              <p>Preparação para quem precisa se organizar para exames de proficiência em espanhol.</p>
+            </div>
+            <a class="program-link" href="https://wa.me/message/PEOPTGUMLEV3N1?text=Olá!%20Quero%20saber%20sobre%20preparação%20para%20SIELE%20ou%20CELU." target="_blank" rel="noopener">Saber mais →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cert" id="certificacoes">
+      <div class="container cert-grid">
+        <div>
+          <span class="eyebrow">Certificações</span>
+          <h2>Prepare-se para SIELE e CELU com direção.</h2>
+          <p>
+            Para quem precisa comprovar seu espanhol, a preparação pode ser organizada
+            de acordo com o exame e o objetivo acadêmico ou profissional.
+          </p>
+          <a class="btn btn-gold" style="margin-top:28px" href="https://wa.me/message/PEOPTGUMLEV3N1?text=Olá!%20Quero%20me%20preparar%20para%20SIELE%20ou%20CELU." target="_blank" rel="noopener">Falar sobre certificação</a>
+        </div>
+        <div class="cert-panel">
+          <div class="cert-item"><span class="check">✓</span><div><strong>SIELE</strong><span>Preparação direcionada para a certificação internacional de espanhol.</span></div></div>
+          <div class="cert-item"><span class="check">✓</span><div><strong>CELU</strong><span>Estudo orientado para o exame oficial de proficiência em língua espanhola.</span></div></div>
+          <div class="cert-item"><span class="check">✓</span><div><strong>Estratégia de estudo</strong><span>Organização do conteúdo de acordo com seu momento e objetivo.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section social">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Acompanhe</span>
+          <h2>Conheça a Juhal também nas redes.</h2>
+          <p>Conteúdo, rotina de estudos e novidades diretamente nos perfis da academia e da professora.</p>
+        </div>
+        <div class="social-grid">
+          <article class="social-card dark">
+            <div>
+              <span class="eyebrow">Academy</span>
+              <h3>Juhal Academy</h3>
+              <p>O perfil da academia para acompanhar novidades, aulas e inscrições.</p>
+              <div class="handle">@juhal.academy</div>
+            </div>
+            <a class="btn btn-light" href="https://www.instagram.com/juhal.academy/" target="_blank" rel="noopener">Abrir Instagram →</a>
+          </article>
+          <article class="social-card">
+            <div>
+              <span class="eyebrow">Professora</span>
+              <h3>Espanhol Argentina</h3>
+              <p>Conteúdo da professora nativa argentina para quem quer aprender e falar espanhol.</p>
+              <div class="handle">@espanhol.argentina</div>
+            </div>
+            <a class="btn btn-dark" href="https://www.instagram.com/espanhol.argentina/" target="_blank" rel="noopener">Ver perfil →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container contact-wrap">
+        <div>
+          <span class="eyebrow">Inscrições abertas</span>
+          <h2>Seu próximo idioma pode começar aqui.</h2>
+          <p>
+            Conte um pouco do que você procura e envie pelo WhatsApp. A professora recebe
+            sua mensagem e pode orientar você sobre o caminho mais adequado.
+          </p>
+
+          <div class="contact-list">
+            <a class="contact-link" href="https://wa.me/message/PEOPTGUMLEV3N1" target="_blank" rel="noopener">
+              <span>WA</span> Falar diretamente pelo WhatsApp
+            </a>
+            <a class="contact-link" href="https://www.instagram.com/espanhol.argentina/" target="_blank" rel="noopener">
+              <span>IG</span> @espanhol.argentina
+            </a>
+            <a class="contact-link" href="https://www.instagram.com/juhal.academy/" target="_blank" rel="noopener">
+              <span>JA</span> @juhal.academy
+            </a>
+          </div>
+        </div>
+
+        <form class="lead-form" id="leadForm">
+          <h3>Quero saber sobre as aulas</h3>
+          <div class="field">
+            <label for="name">Seu nome</label>
+            <input id="name" name="name" required placeholder="Como podemos chamar você?">
+          </div>
+          <div class="field">
+            <label for="goal">O que você procura?</label>
+            <select id="goal" name="goal" required>
+              <option value="">Selecione uma opção</option>
+              <option>Espanhol do zero</option>
+              <option>Conversação</option>
+              <option>Aulas para criança ou adolescente</option>
+              <option>Preparação para SIELE</option>
+              <option>Preparação para CELU</option>
+              <option>Outro objetivo</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="level">Seu nível atual</label>
+            <select id="level" name="level" required>
+              <option value="">Selecione</option>
+              <option>Iniciante</option>
+              <option>Básico</option>
+              <option>Intermediário</option>
+              <option>Avançado</option>
+              <option>Não sei informar</option>
+            </select>
+          </div>
+          <button class="btn" type="submit">Enviar pelo WhatsApp →</button>
+          <p class="form-note">Ao enviar, o WhatsApp será aberto com suas respostas preenchidas.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="brand">
+        <span class="brand-mark">JA</span>
+        <span>
+          <strong>JUHAL ACADEMY</strong>
+          <small>INGLÊS • ESPANHOL</small>
+        </span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/juhal.academy/" target="_blank" rel="noopener">@juhal.academy</a>
+        <a href="https://www.instagram.com/espanhol.argentina/" target="_blank" rel="noopener">@espanhol.argentina</a>
+        <a href="https://wa.me/message/PEOPTGUMLEV3N1" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="footer-note">Juhal Academy © 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+    document.getElementById('leadForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const goal = document.getElementById('goal').value;
+      const level = document.getElementById('level').value;
+
+      const message =
+        'Olá! Vim pelo site da Juhal Academy e gostaria de saber sobre as aulas.%0A%0A' +
+        'Nome: ' + encodeURIComponent(name) + '%0A' +
+        'Objetivo: ' + encodeURIComponent(goal) + '%0A' +
+        'Nível atual: ' + encodeURIComponent(level);
+
+      window.open('https://wa.me/message/PEOPTGUMLEV3N1?text=' + message, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
