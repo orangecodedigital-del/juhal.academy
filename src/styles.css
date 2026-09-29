@@ -99,8 +99,12 @@ a{text-decoration:none;color:inherit}
   color:var(--ink)
 }
 .world-map-watermark{
-  position:absolute;inset:0;display:grid;place-items:center;
-  color:#9fd7ef;opacity:.16;pointer-events:none;transform:translate(15%, -2%) scale(1.5)
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  opacity:.13;pointer-events:none;transform:translate(8%, -3%) scale(1.35)
+}
+.world-map-watermark img{
+  width:min(980px,78vw);height:auto;display:block;
+  filter:brightness(0) saturate(100%) invert(76%) sepia(20%) saturate(1150%) hue-rotate(172deg) brightness(104%) contrast(91%)
 }
 .world-inner{max-width:1400px;margin:auto;position:relative;z-index:1}
 .section-index{max-width:1400px;margin:0 auto .7rem;color:#e3b82d;font:500 1rem Georgia,serif;letter-spacing:.05em}
